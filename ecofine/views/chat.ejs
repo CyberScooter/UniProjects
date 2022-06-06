@@ -1,0 +1,83 @@
+<%- include partials/header.ejs %>
+
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Background Rectangle, do not touch-->
+<svg id="bg-shape" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 1080"
+    style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
+    <style type="text/css">
+        .st0 {
+            fill: url(#SVGID_1_);
+        }
+    </style>
+    <g>
+        <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="918.538" y1="443.1578" x2="1770.2845"
+            y2="-198.6792">
+            <stop offset="0" style="stop-color:#8ac0ff" />
+            <stop offset="1" style="stop-color:#0062FF" />
+        </linearGradient>
+        <path class="st0" d="M1224.2,639.6c97.1,97.1,254.5,97.1,351.6,0L1920,295.4V0H584.6L1224.2,639.6z" />
+    </g>
+</svg>
+
+<%- include partials/navbar.ejs%>
+
+<div class="container mt-5" style="max-width: 400px;">
+    <div class="row justify-content-center text-center">
+        <div class="col-12 bg-chat-title">
+            <h4 class="text-uppercase">Ecofine Chat</h4>
+            <h6><small>Commands: !activeusers</small></h6>
+            <h6 style="color:red;"><small>Do not share any personal details to anyone in the chat</small></h6>
+        </div>
+    </div>
+</div>
+
+<div class="container" style="max-width: 400px;">
+    <div class="row justify-content-center">
+        <div class="col-lg-12 bg-chat-messages">
+            <div id="form">
+                <div class="messages" >
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center mb-5">
+        <div class="col-lg-12">
+            <form id="chat">
+                <div id="username" class="row justify-content-center bg-chat-username pl-3 pr-3">
+                    <div class="col-12 p-1">
+                        <div class="input-group pt-3">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <span class="material-icons">
+                                        person
+                                    </span>
+                                </div>
+                            </div>
+                            <input class="form-control chat-input" type="text" id="username" placeholder="Username"
+                                autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center bg-chat-input pl-3 pr-3 pb-3">
+                    <div class="col-lg-9 p-1">
+                        <input class="form-control form-inline chat-input" type="text" id="message" placeholder="Send a message"
+                            autocomplete="off">
+                    </div>
+                    <div class="col-lg-3 p-1">
+                        <button class="btn btn-dark btn-block" style="background-color: #772ce8; border-color: #772ce8;"
+                            id="send">Enter</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/javascripts/chat.js"></script>
+
+</body>
+</html>
+

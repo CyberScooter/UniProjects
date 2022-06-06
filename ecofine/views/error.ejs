@@ -1,0 +1,37 @@
+<%- include partials/header.ejs %>
+
+<!-- ========== ERROR ========== -->
+
+<section>
+    <svg style="position: absolute;" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px" y="0px" viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
+        <style type="text/css">
+            .st0 {
+                fill: url(#SVGID_1_);
+            }
+        </style>
+        <g>
+            <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="918.538" y1="443.1578" x2="1770.2845"
+                y2="-198.6792">
+                <stop offset="0" style="stop-color:#8ac0ff" />
+                <stop offset="1" style="stop-color:#0062FF" />
+            </linearGradient>
+            <path class="st0" d="M1224.2,639.6c97.1,97.1,254.5,97.1,351.6,0L1920,295.4V0H584.6L1224.2,639.6z" />
+        </g>
+    </svg>
+
+    <div class="container">
+        <div class="row text-center p-5">
+            <div class="col-md-12">
+                <h2 class="display-1 font-weight-normal"><%= error.status %></h2>
+                <h1 class="display-4"><%= message %></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 m-5">
+                <pre class="text-muted"><small><%= error.stack %></small></pre>
+            </div>
+        </div>
+    </div>
+</section>
+

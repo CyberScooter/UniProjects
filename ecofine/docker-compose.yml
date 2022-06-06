@@ -1,0 +1,36 @@
+version: "3"
+services:
+  nodejs-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - ecofinedb
+    environment:
+      DATABASE_URL: postgres://root:123456@ecofinedb:5432/ecofine
+      GMAIL_EMAIL:
+      GMAIL_PASS:
+      FIREBASE_PROJECT_ID:
+      FIREBASE_PRIVATE_KEY_ID:
+      FIREBASE_PRIVATE_KEY:
+      FIREBASE_CLIENT_EMAIL:
+      FIREBASE_CLIENT_ID:
+      FIREBASE_CLIENT_URL:
+    volumes:
+      - /usr/src/app/node_modules
+
+  ecofinedb:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: 123456
+    # ports:
+    #   - "5437:5432"
+    volumes:
+      # - ./postgres-data:/var/lib/postgresql/data
+      # copy the sql script to create tables
+      - ./ecofine/scheme:/docker-entrypoint-initdb.d

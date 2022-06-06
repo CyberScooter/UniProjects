@@ -1,0 +1,55 @@
+<%- include partials/header.ejs %>
+
+<div class="container" id="searchBar">
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <h1 class="searchbar-logo"><a href="/">ecofine</a></h1>
+    </div>
+  </div>
+
+  <div class="row mt-2 mb-3">
+    <div class="col-sm-12">
+      <form id="jobs" method="post">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="material-icons input-group-text border-right-0"
+              style="background-color: #fff; color: #0062ff;">search</span>
+          </div>
+          <input class="form-control border-left-0" type="text" name="job" placeholder="Search for remote jobs by tag" id="" />
+          <div class="input-group-append">
+            <input class="btn btn-outline-primary" type="submit" value="Find Job"/>
+          </div>
+        </div>
+        <br><p class="text-center text-muted mb-4">Jobs sourced from <a target="_blank" href="https://remoteok.io/">RemoteOK</a> API.</p>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h5 class="text-muted" id="FoundResults"></h5>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="mx-auto" id="Loading" class="mt-4 mb-4" style="width: 50px; height: auto; opacity: 0"></div>
+    </div>
+    <span class="col-sm-12 card-columns" id="jobsData"></span>
+  </div>
+</div>
+
+<script src="/javascripts/jobs.js"></script>
+<script src="/javascripts/lottie.js"></script>
+<script>
+  var animation = bodymovin.loadAnimation({
+    container: document.getElementById('Loading'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: '/stylesheets/assets/load-blu.json'
+  })
+</script>
+
+<!-- <%- include partials/footer.ejs %> 

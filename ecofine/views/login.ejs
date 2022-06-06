@@ -1,0 +1,68 @@
+<%- include partials/header.ejs %>
+
+<!-- ========== SIGN IN ========== -->
+<section class="pt-5 pb-5 pt-md-11">
+    <div class="container">
+        <div class="row login-row">
+            <img class="col-md-5 login-img login-left-block img-fluid p-0 d-none d-lg-block"
+                src="stylesheets/assets/images/magnus-olsson-KAzgxInZXMo-unsplash-edit.jpg" alt="Responsive image">
+            <div class="col-lg-7 login-right-block">
+                <form class="pl-5 pr-5 mt-3 " method="post" id="login">
+                    <h1><a class="navbar-brand mt-5 mb-3" style="font-size: 30pt;" href="/">ecofine </a></h1>
+                    <h5 class="mb-4">Sign into your account</h5>
+
+                    <% if(typeof(error) != "undefined"){ %>
+                    <%= error %>
+                    <% } %>
+                    <div class="col-md-7 p-0 mt-2">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="material-icons input-group-text border-right-0"
+                                    style="background-color: #fff;">alternate_email</span>
+                            </div>
+                            <input class="form-control border-left-0" type="email" name="email" autocomplete="off"
+                                placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="col-md-7 p-0 mt-2">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="material-icons input-group-text border-right-0"
+                                    style="background-color: #fff;">lock</span>
+                            </div>
+                            <input class="form-control border-left-0" type="password" name="password"
+                                placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="col-md-7 p-0 mt-3">
+                        <button class="btn btn-primary container" type="submit">Login</button>
+                    </div>
+                    <p style="color:red;" id="Error"></p>
+                    <p><a class="btn-link mt-0 mb-5 font-weight-light text-decoration-none" href="/register">Don't have
+                            an account? Register here</a></p>
+                    <div id="Loading-icon" class="mt-4 mb-4" style="width: 50px; height: auto; opacity: 0"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="flex">
+        <div class="col-md-12 text-center p-5">
+            <h4 class="display-4 text-muted" style="font-size: larger;" id="Loading"></h4>
+        </div>
+    </div>
+</section>
+
+<!-- Scripts -->
+<script src="/javascripts/auth.js"></script>
+<script src="/javascripts/lottie.js"></script>
+<script>
+    var animation = bodymovin.loadAnimation({
+        container: document.getElementById('Loading-icon'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: '/stylesheets/assets/load-blu.json'
+    })
+</script>
+
+<%- include partials/footer.ejs %>

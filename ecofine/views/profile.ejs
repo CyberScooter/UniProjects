@@ -1,0 +1,95 @@
+<%- include partials/header.ejs %>
+
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Background Rectangle, do not touch-->
+<svg id="bg-shape" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 1080"
+    style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
+    <style type="text/css">
+        .st0 {
+            fill: url(#SVGID_1_);
+        }
+    </style>
+    <g>
+        <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="918.538" y1="443.1578" x2="1770.2845"
+            y2="-198.6792">
+            <stop offset="0" style="stop-color:#8ac0ff" />
+            <stop offset="1" style="stop-color:#0062FF" />
+        </linearGradient>
+        <path class="st0" d="M1224.2,639.6c97.1,97.1,254.5,97.1,351.6,0L1920,295.4V0H584.6L1224.2,639.6z" />
+    </g>
+</svg>
+
+<%- include partials/navbar.ejs %>
+
+<div class="container d-none d-md-block">
+    <div class="row mt-5 pt-5">
+        <div class="col-4"></div>
+        <div class="col-8">
+            <h4>Your bookmarks:</h4>
+        </div>
+    </div>
+</div>
+
+<section id="profile-card">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 text-center fade-in-slide">
+                <div class="card">
+                    <img class="rounded-circle mt-0"
+                        style="border:5px solid white; transform: translateY(-50px); background: white !important; height: auto; width: 11em;"
+                        src="/stylesheets/assets/images/profile.jpg" class="card-img-top" alt="Profile Picture">
+                    <div class="card-body p-0 m-0 pl-3 pr-3 pb-3 mb-3">
+                        <h3 class="card-title text-center text-capitalize"><%= username %></h3>
+                        <h6 class="lead text-muted mt-3">Delete bookmarks with the red button, and add them using our <a href=/search>remote jobs search</a>.
+                        </h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8 fade-in-slide" style="animation-delay: 250ms">
+                <% if(typeof(bookmarks) != "undefined") { %>
+                <% bookmarks.forEach(element => { %>
+                <div class="row mt-1 mb-1 pt-2 pb-2 bg-white rounded align-items-center">
+                    <div class="col-10">
+                        <h5 class="m-0"><a class=" text-decoration-none" style="color: #212529;" href="<%=element.url%>"
+                                target="_blank"><%= element.company %> </a></h5>
+                    </div>
+                    <div class="col-2 text-right">
+                        <button class="btn btn-danger" onclick="return deleteBookmark(this.value);"
+                            value="<%=element.url%>"><span class="material-icons"
+                                style="font-size: medium;">delete</span></button>
+
+                    </div>
+                </div>
+                <% }); %>
+
+                <% } %>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    function deleteBookmark(value) {
+        const cookieValue = document.cookie
+            .split('; ')
+            .find(row => row.startsWith('XSRF-TOKEN='))
+            .split('=')[1];
+
+        fetch("/deleteBookmark", {
+                method: "POST",
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                    "CSRF-Token": cookieValue,
+                },
+                body: JSON.stringify({
+                    value
+                }),
+            }).then((res) => res.text())
+            .then((res) => {
+                window.location.replace('/profile')
+            })
+    }
+</script>

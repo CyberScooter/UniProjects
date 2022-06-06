@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="74px" height="73px" viewBox="0 0 74 73" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>ico-no-company-logoPage 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="176" y="25" width="800" height="585"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="800" height="585" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="joblist-companylogo-01" transform="translate(-227.000000, -219.000000)">
+            <rect id="Rectangle-4" fill="#FFFBEB" x="186" y="196" width="766" height="170"></rect>
+            <g id="Page-1" transform="translate(227.000000, 219.000000)">
+                <polygon id="Fill-4" fill="#F8F9F9" points="0.864391803 72.5335424 72.9873148 72.5335424 72.9873148 0.367474576 0.864391803 0.367474576"></polygon>
+                <polygon id="Stroke-5" stroke="#EFF0F1" stroke-width="0.5" points="0.864391803 72.5335424 72.9873148 72.5335424 72.9873148 0.367474576 0.864391803 0.367474576"></polygon>
+                <path d="M33.2772295,24.8063898 L41.7356557,24.8063898 L41.7356557,20.5748644 L33.2772295,20.5748644 L33.2772295,24.8063898 Z M54.4270049,24.8101017 L45.9685787,24.8101017 L45.9685787,18.4591017 L41.7356557,16.343339 L33.2772295,16.343339 L29.0443066,18.4591017 L29.0443066,24.8101017 L20.5821705,24.8101017 C18.2561033,24.8101017 16.3529574,26.7142881 16.3529574,29.0416271 L16.3529574,52.3224407 C16.3529574,54.6534915 18.2561033,56.557678 20.5821705,56.557678 L54.4270049,56.557678 C56.756782,56.557678 58.6599279,54.6534915 58.6599279,52.3224407 L58.6599279,29.0416271 C58.6599279,26.7142881 56.756782,24.8101017 54.4270049,24.8101017 L54.4270049,24.8101017 Z" id="Fill-6" fill="#D4D6D9"></path>
+            </g>
+            <use id="Rectangle" stroke="#E5E5E5" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>

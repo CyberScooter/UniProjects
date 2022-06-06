@@ -1,0 +1,132 @@
+<%- include partials/header.ejs %>
+
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Background Rectangle, do not touch-->
+<svg id="bg-shape" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 1080"
+  style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
+  <style type="text/css">
+    .st0 {
+      fill: url(#SVGID_1_);
+    }
+  </style>
+  <g>
+    <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="918.538" y1="443.1578" x2="1770.2845"
+      y2="-198.6792">
+      <stop offset="0" style="stop-color:#8ac0ff" />
+      <stop offset="1" style="stop-color:#0062FF" />
+    </linearGradient>
+    <path class="st0" d="M1224.2,639.6c97.1,97.1,254.5,97.1,351.6,0L1920,295.4V0H584.6L1224.2,639.6z" />
+  </g>
+</svg>
+
+<%- include partials/navbar.ejs%>
+
+<!-- ========== LANDING ========== -->
+<section class="pt-5 pb-5 pt-md-11">
+  <div class="container landing">
+    <div class="row mt-5 pt-5 mb-5 pb-5 landing h-100 phone-fix">
+      <div class="col-md-4 align-items-center landing-header">
+        <h2 class="fade-in-slide" style="animation-delay: 100ms" id="job-search-slogan">Job search, reinvented</h2>
+        <p class="font-weight-light mt-3 fade-in-slide" style="animation-delay: 250ms" id="job-search-description">Find thousands of remote job opportunities to keep you living greener and comfortably.</p>
+        <a class="btn btn-primary fade-in-slide" style="animation-delay: 500ms" href="/search"
+          type="button rounded-0" id="job-search-button">Search Jobs</a>
+      </div>
+      <div class="col-md-8 d-none d-md-block fade-in-slide">
+        <img src="/stylesheets/assets/images/iphone.png" class="img-fluid img-phone mx-auto d-block" alt="iPhone">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ANALYTICS ========== -->
+<section id="analytics" class="pt-5 pb-5 pt-md-11 bg-blue">
+  <div class="container mt-5 mb-5 pt-5 pb-5">
+    <div class="row row-analyics justify-content-md-center pt-5 pb-5">
+      <div class="col-md-3 text-center">
+        <h3 class="text-uppercase font-weight-bold pt-2 fade-in-slide" style="animation-delay: 100ms"><%= analytics.jobSearches%></h3>
+        <p class="text-muted pb-2 fade-in-slide" style="animation-delay: 150ms" id="job-search-analytics">Total Job Searches</p>
+      </div>
+      <div class="col-md-3 text-center border-right border-left">
+        <h3 class="text-uppercase font-weight-bold pt-2 fade-in-slide" style="animation-delay: 200ms"><%= analytics.visitors %></h3>
+        <p class="text-muted pb-2 fade-in-slide" style="animation-delay: 250ms" id="visitors-analytics">Total Visitors</p>
+      </div>
+      <div class="col-md-3 text-center">
+        <h3 class="text-uppercase font-weight-bold pt-2 fade-in-slide" style="animation-delay: 300ms"><%= analytics.bookmarks%></h3>
+        <p class="text-muted pb-2 fade-in-slide" style="animation-delay: 350ms" id="bookmarks-analytics">Total Bookmarks</p>
+      </div>
+    </div>
+</section>
+
+<!-- ========== FEATURES ========== -->
+<section id="features" class="pt-5 pb-5 pt-md-11 bg-white">
+  <div class="container mt-5 mb-5 pt-2 pb-2">
+    <div class="row justify-content-md-center">
+      <div class="col-md-4 text-center">
+        <div class="icon bg-primary text-white rounded-circle icon-lg icon-shape pt-3 mb-2 fade-in-slide"
+          style="animation-delay: 100ms">
+          <span class="material-icons md-48" style="font-size: 5em; animation-delay: 150ms;">question_answer</span>
+        </div>
+        <h3 class="font-weight-bold fade-in-slide" style="animation-delay: 200ms" id="chat-feature">Socials</h3>
+        <p class="text-muted fade-in-slide" style="animation-delay: 250ms" id="chat-feature-description">Sign up to stay connected with other remote job hunters. If you need to stay motivated, stay social with our chat system, and get in touch with new people in real-time.</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <div class="icon bg-primary text-white rounded-circle icon-lg icon-shape pt-3 mb-2 fade-in-slide">
+          <span class="material-icons" style="font-size: 5em; animation-delay: 300ms;">work</span>
+        </div>
+        <h3 class="font-weight-bold fade-in-slide" style="animation-delay: 350ms" id="remote-jobs-feature">Remote Work</h3>
+        <p class="text-muted fade-in-slide" style="animation-delay: 400ms" id="remote-jobs-feature-description">Find a work-from-home career that suits you and your life. If you're tired of opening new tabs during your search, you can sign up to bookmark jobs that you want to check out later.</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <div class="icon bg-primary text-white rounded-circle icon-lg icon-shape pt-3 mb-2 fade-in-slide">
+          <span class="material-icons" style="font-size: 5em; animation-delay: 450ms;">place</span>
+        </div>
+        <h3 class="font-weight-bold fade-in-slide" style="animation-delay: 500ms" id="map-feature">Navigation</h3>
+        <p class="text-muted fade-in-slide" style="animation-delay: 550ms" id="map-feature-description">Not working remotely? Still interested in travel? Use our map to find the shortest routes to your destination, and sign up to find out how much you could be emitting on your journey.</p>
+      </div>
+    </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section id="contact" class="pt-4 pt-md-11">
+  <div class="container mt-2 mb-">
+    <div class="row justify-content-center">
+      <div class="col-md-6 text-center">
+        <h3 class="font-weight-bold mt-5" id="contact-header">Contact</h3>
+        <form id="contact_form">
+          <div class="form-group mt-3 mb-5 justify-content-center text-center">
+            <input type="text" class="form-control mt-2" name="name" id="NameInput" placeholder="Name">
+            <input type="email" class="form-control mt-2" name="email" id="EmailInput" aria-describedby="emailHelp"
+              placeholder="Email">
+            <textarea class="form-control mt-2" name="message" id="TextInput" rows="5" placeholder="Message"></textarea>
+            <div class="mx-auto mt-2 mb-2" id="Loading-icon" style="width: 50px; height: auto;"></div>
+            <div class="g-recaptcha mt-2 mb-2" data-sitekey="6LevlaUaAAAAAJsMzLjqNtuG6HIRwpnVZrbQfcye"></div>
+            <input class="btn btn-primary mb-2" type="submit" value="Submit" id="SubmitEmail">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% if(typeof(error) != "undefined"){ %>
+<%= error %>
+<% } %>
+
+<!-- Scripts -->
+<script src="/javascripts/mailer.js"></script>
+<script src="/javascripts/lottie.js"></script>
+<script>
+
+  var animation = bodymovin.loadAnimation({
+    container: document.getElementById('Loading-icon'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: '/stylesheets/assets/load-blu.json'
+  })
+</script>
+
+
+<%- include partials/footer.ejs %>

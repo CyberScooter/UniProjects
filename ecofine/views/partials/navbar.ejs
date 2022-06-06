@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="/">ecofine</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link text-uppercase mr-3 ml-3" href="/">Home <span
+              class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link text-uppercase mr-3 ml-3" href="/search">Jobs</a>
+          <a class="nav-item nav-link text-uppercase mr-3 ml-3" href="/maps">Maps</a>
+          <a class="nav-item nav-link text-uppercase mr-3 ml-3" href="/#contact">Contact</a>
+          <% if(!loggedIn){ %>
+          <a class="nav-item nav-link text-uppercase mr-3 ml-3" href="/login">Sign in</a>
+          <% }else { %>
+          <a class="nav-item nav-link text-uppercase mr-3 ml-3" href="/chat">Chat</a>
+          <a class="nav-item nav-link text-uppercase mr-3 ml-3" href="/profile">Profile</a>
+          <a class="nav-item nav-link text-uppercase mr-3 ml-3" href="/logout">Logout</a>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </nav>

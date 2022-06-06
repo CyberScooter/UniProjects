@@ -1,0 +1,124 @@
+    <%- include partials/header.ejs %>
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <!-- Generator: Adobe Illustrator 23.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+    <!-- Background Rectangle, do not touch-->
+
+    <% if(!loggedIn){ %>
+    <svg id="bg-shape" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 1080"
+        style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
+        <style type="text/css">
+            .st0 {
+                fill: url(#SVGID_1_);
+            }
+        </style>
+        <g>
+            <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="918.538" y1="443.1578" x2="1770.2845"
+                y2="-198.6792">
+                <stop offset="0" style="stop-color:#8ac0ff" />
+                <stop offset="1" style="stop-color:#0062FF" />
+            </linearGradient>
+            <path class="st0" d="M1224.2,639.6c97.1,97.1,254.5,97.1,351.6,0L1920,295.4V0H584.6L1224.2,639.6z" />
+        </g>
+    </svg>
+    <% } %>
+
+
+    <%- include partials/navbar.ejs %>
+
+    <script src="/javascripts/carboncalculator.js"></script>
+
+    <!-- ========== MAPS LANDING ========== -->
+    <section class="pt-2 pb-5 pt-md-11" id="Animation">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mb-5 text-center">
+                    <div id="Maps-intro"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== MAP ========== -->
+    <section id="maps" class="pt-5 pb-5 pt-md-11">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mt-2 mb-2" style="height: 35em;">
+                    <div class="rounded h-100 w-100" id="map"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CO2 FORM ========== -->
+    <% if(loggedIn){ %>
+    <section class="pt-3 pb-3 pt-md-11 bg-blue" id="CarbonFormSection">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="input-group text-center justify-content-center">
+                        <form id="CarbonDioxidePerMile">
+                            <input class="form-control text-center w-100" type="text" id="CO2permileinput"
+                                placeholder="CO2/Mile">
+                            <small id="CO2Help" class="form-text text-dark">Your input is only saved for 24
+                                hours, enter starting and destination place before entering value here</small>
+                            <input id="CO2SubmitButton" class="btn btn-primary pr-5 pl-5 mt-3 text-center w-100" name="submitButton"
+                                type="submit" value="Submit">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <% } %>
+
+    <!-- ========== OUTPUT ========== -->
+    <section class="pt-3 pb-5 pt-md-11 bg-blue">
+        <div class="container">
+            <% if(loggedIn) { %>
+            <div class="row">
+                <div class="col-md-12 text-center mb-3">
+                    <Button class="btn btn-danger pr-5 pl-5 mb-3 text-center w-90" id="ResetCarbon" onclick="deleteCarbonCookie();"> Reset CO2/mile </Button>
+
+                    <p class="lead mb-0" style="animation-delay: 2000ms">Total CO<sub>2</sub> emissions
+                        for your journey is...</p>
+                    <p class="display-4 mb-4 fade-in-slide" style="animation-delay: 2200ms"><span
+                            id="CO2PerJourney"></span>
+                    </p>
+                    
+                </div>
+            </div>
+            <% }else { %>
+            <div class="col-md-12 text-center mt-3 mb-3">
+                <p class="lead fade-in-slide mb-0" style="animation-delay: 2000ms">Log in to use the carbon emissions
+                    calculator</p>
+            </div>
+            <% } %>
+        </div>
+    </section>
+
+    <script src="/javascripts/map.js"></script>
+    <script src="/javascripts/lottie.js"></script>
+
+    <% if(!loggedIn){ %>
+    <script>
+        
+        var animation = bodymovin.loadAnimation({
+            container: document.getElementById('Maps-intro'),
+            renderer: 'svg',
+            loop: false,
+            autoplay: true,
+            path: '/stylesheets/assets/maps-landing.json'
+        })
+
+        setTimeout(() => {
+            document.getElementById("Animation").remove()
+            document.getElementById("maps").className = "pt-5 pb-3 pt-md-11"
+
+        }, 25140)
+
+    </script>
+    <% } %>
+
+    <%- include partials/footer.ejs %>
