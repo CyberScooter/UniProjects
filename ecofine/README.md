@@ -27,7 +27,20 @@
        FIREBASE_CLIENT_URL=
    ```
 
-3. Launch docker in ecofine folder and start application
+3. Fill firebase authentication public key details at the top of [auth.js](./public/javascripts/auth.js) file
+   ```
+      apiKey: "",
+      authDomain: "",
+      databaseURL: "",
+      projectId: "",
+      storageBucket: "",
+      messagingSenderId: "",
+      appId: "",
+      measurementId: ""
+  ```
+
+
+4. Launch docker in ecofine folder and start application
    ```
     docker-compose up --build
    ```
